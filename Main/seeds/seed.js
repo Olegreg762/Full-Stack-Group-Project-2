@@ -1,34 +1,48 @@
 const sequelize = require('../config/connection');
-const { User, Expense, Category } = require('../models');
+const { User, Expense, Budget } = require('../models');
 
 const userData = require('./userData.json');
 const expenseData = require('./expenseData.json');
-const categoryData = require('./categoryData.json');
+const budgetData = require('./budgetData.json');
+
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
+    .then(function () {
+      return sequelize.sync({ force: true });
+    })
+    .then(function () {
+      return sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
+    })
+    .then(function () {
+      console.log('Database synchronised.');
+    }, function (err) {
+      console.log(err);
+    });
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
+  console.log(users);
 
-  for (const project of categoryData) {
-    await Category.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+  for (const budget of budgetData) {
+    await Budget.create({
+      ...budget,
+
     });
-    for (const project of expenseData) {
-      await Expense.create({
-        ...project,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
-      });
-
-
-    }
-
-    process.exit(0);
   }
-};
+  for (const expense of expenseData) {
+    await Expense.create({
+      ...expense,
+
+    });
+  }
+
+  process.exit(0);
+}
+
 
 seedDatabase();
+
+console.table(expenseData);

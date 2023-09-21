@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Rent",
+        "total_budget": 700,
+        "user_id": 1
+    },
+    {
+        "name": "Utilities",
+        "total_budget": 300,
+        "user_id": 2
+    },
+    {
+        "name": "Food",
+        "total_budget": 450,
+        "user_id": 3
+    }
+]
