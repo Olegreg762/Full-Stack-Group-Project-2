@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
   const description = document.querySelector('#expenseDesc').value.trim();
 
   if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/expenses`, {
       method: 'POST',
       body: JSON.stringify({ name, needed_funding, description }),
       headers: {
@@ -26,14 +26,14 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/expenses/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete expense');
     }
   }
 };

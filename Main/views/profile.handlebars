@@ -27,17 +27,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
+  {{#if expenses.length}}
   <div class="col-md-6 expenseList">
     <h3>Expense Viewer</h3>
 
-    {{#each projects as |project|}}
+    {{#each expenses as |expense|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/expense/{{expense.id}}">{{expense.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{expense.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
