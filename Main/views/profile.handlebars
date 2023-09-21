@@ -10,11 +10,11 @@
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
+        <label for="project-name">Expense name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
+        <label for="project-funding">Expense type:</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
@@ -29,7 +29,7 @@
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>View Budget</h3>
 
     {{#each projects as |project|}}
     <div class="row mb-2">
