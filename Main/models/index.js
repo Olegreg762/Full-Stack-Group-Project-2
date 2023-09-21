@@ -21,7 +21,7 @@ Expense.belongsTo(Budget, {
   foreignKey: 'budget_id',
 });
 
-// Expense.belongsToMany(User, { through: 'Budget'});
+// User.hasMany(Expense, { through: 'Budget'});
 
 
 
