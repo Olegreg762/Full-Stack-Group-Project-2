@@ -1,15 +1,14 @@
 const router = require('express').Router();
-const { Budget } = require('../../models');
+const { User, Budget, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const newBudget = await Budget.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-
-    res.status(200).json(newBudget);
+      const user = req.session.user_id;
+      const budget = await Budget.findAll({
+        where: {user_id: user},
+      });
+    res.status(200).json(budget);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -25,7 +24,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!budgetData) {
-      res.status(404).json({ message: 'No budget found with this id!' });
+      res.status(404).json({ message: 'No expense found with this id!' });
       return;
     }
 
