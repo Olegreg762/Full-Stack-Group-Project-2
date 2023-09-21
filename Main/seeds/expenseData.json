@@ -1,0 +1,21 @@
+[
+  {
+    "id":1,
+    "category_id": 1,
+    "amount": 600,
+    "user_id": ""
+  },
+  {
+    "id":2,
+    "category_id": 2,
+    "amount": 200,
+    "user_id": ""
+  },
+  {
+
+    "id":3,
+    "category_id": 3,
+    "amount": 150.44,
+    "user_id": ""
+  }
+]
