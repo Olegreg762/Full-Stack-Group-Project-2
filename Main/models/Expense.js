@@ -11,26 +11,27 @@ Expense.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    category_id: {
-      type: DataTypes.INTEGER,
+    expense_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-          model: 'Category',
-          key: 'id',
-      },
     },
-    amount: {
+    category_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    expense_amount: {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
-    user_id: {
+    budget_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: 'user',
+        model: 'budget',
         key: 'id',
-      },
-    },
-  },
+      }
+    }
+   },
   {
     sequelize,
     timestamps: false,
