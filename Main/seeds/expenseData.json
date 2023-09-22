@@ -1,21 +1,23 @@
 [
   {
-    "id":1,
-    "category_id": 1,
-    "amount": 600,
-    "user_id": ""
+    
+    "expense_name": "September Rent",
+    "category_name": "Rent",
+    "expense_amount": 579.21,
+    "budget_id": 1
+
   },
   {
-    "id":2,
-    "category_id": 2,
-    "amount": 200,
-    "user_id": ""
+    "expense_name": "November Rent",
+    "category_name": "Rent",
+    "expense_amount": 987.21,
+    "budget_id": 2
   },
   {
 
-    "id":3,
-    "category_id": 3,
-    "amount": 150.44,
-    "user_id": ""
+    "expense_name": "October Rent",
+    "category_name": "Rent",
+    "expense_amount": 519.21,
+    "budget_id": 3
   }
 ]
