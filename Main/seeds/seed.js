@@ -46,3 +46,4 @@ const seedDatabase = async () => {
 seedDatabase();
 
 console.table(expenseData);
+console.table(budgetData);
