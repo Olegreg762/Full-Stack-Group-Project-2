@@ -19,5 +19,12 @@
     "category_name": "Rent",
     "expense_amount": 519.21,
     "budget_id": 3
+  },
+  {
+
+    "expense_name": "December Rent",
+    "category_name": "Rent",
+    "expense_amount": 234234.21,
+    "budget_id": 4
   }
 ]

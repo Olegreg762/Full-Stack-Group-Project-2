@@ -13,5 +13,10 @@
         "name": "Food",
         "total_budget": 450,
         "user_id": 3
+    },
+    {
+        "name": "Gifts",
+        "total_budget": 580,
+        "user_id": 4
     }
 ]
