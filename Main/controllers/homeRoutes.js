@@ -4,7 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+<<<<<<< Updated upstream
     // Get all projects and JOIN with user data
+=======
+    // Get all expenses and JOIN with user data
+>>>>>>> Stashed changes
     const budgetData = await Budget.findAll({
       include: [
         {
@@ -15,11 +19,19 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
+<<<<<<< Updated upstream
     const budgets = budgetData.map((budget) => budget.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       budgets, 
+=======
+    const budget = budgetData.map((budget) => budget.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      Budget, 
+>>>>>>> Stashed changes
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,7 +39,11 @@ router.get('/', async (req, res) => {
   }
 });
 
+<<<<<<< Updated upstream
 router.get('/project/:id', async (req, res) => {
+=======
+router.get('/budget/:id', async (req, res) => {
+>>>>>>> Stashed changes
   try {
     const budgetData = await Budget.findByPk(req.params.id, {
       include: [
