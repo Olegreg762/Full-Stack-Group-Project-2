@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Budget } = require('../../models');
+const { Budget} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -8,7 +8,13 @@ router.get('/', withAuth, async (req, res) => {
       const budget = await Budget.findAll({
         where: {user_id: user},
       });
-    res.status(200).json(budget);
+      const results = [];
+      for(i = 0; budget.length > i; i++){
+      const { total_budget, name} = budget[i];
+      const result = { total_budget, name};
+      results.push(result);
+    }
+    res.status(200).json(results)
   } catch (err) {
     res.status(400).json(err);
   }

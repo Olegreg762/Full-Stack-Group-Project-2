@@ -6,7 +6,7 @@ router.get('/', withAuth, async (req, res) => {
   try {
       const user = req.session.user_id;
       const expense = await Expense.findAll({
-        where: {user_id: user},
+        where: {budget_id: user},
       });
     res.status(200).json(expense);
   } catch (err) {
