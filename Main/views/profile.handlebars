@@ -117,7 +117,7 @@
           </div>
         </div>
 
-        {{!-- Charts --}} {{#if home}}
+        {{!-- Charts --}} 
         <div
           class="mt-4 mb-5 mx-2 row"
           style="
@@ -153,7 +153,11 @@
                 >
                   <div class="d-flex align-items-center">
                     <i class="fas fa-dollar-sign fa-xs mr-1"></i>
-                    <span style="font-weight: 500">{{ totalExpense }}</span>
+                    {{#each Budgets}}
+                    <span style="font-weight: 500">{{name}} {{ total_budget }}<br></span>
+                    {{/each}}
+                    <span style="font-weight: 500">Total Budget {{ sum_budget Budgets }}</span>
+                    
                   </div>
                   <div>
                     <span
@@ -163,13 +167,13 @@
                         color: #e84200ed;
                       "
                     >
-                      Expenses
+                      Budget
                     </span>
                   </div>
                 </div>
               </div>
               <div
-                class="balance-container col-12 col-sm-3 col-lg-4 my-2 pt-4 row justify-content-center"
+                class="Expenses-container col-12 col-sm-3 col-lg-4 my-2 pt-4 row justify-content-center"
               >
                 <div
                   class="pb-3 pt-4 col-auto col-sm-12 d-flex flex-column justify-content-center align-items-center"
@@ -193,7 +197,14 @@
                 >
                   <div class="d-flex align-items-center">
                     <i class="fas fa-dollar-sign fa-xs mr-1"></i>
-                    <span style="font-weight: 500">{{ totalAmount }}</span>
+                    {{#each Budgets}}
+                    {{#each Expenses}}
+                    <span style="font-weight: 500">{{expense_name}} {{ expense_amount }}<br></span>
+                    {{/each}}
+                    {{#if Expenses.length}}
+                    <span style="font-weight: 500">Total Expenses {{sum_expense Expenses}}<br></span>
+                    {{/if}}
+                    {{/each}}
                   </div>
                   <div>
                     <span
@@ -203,7 +214,7 @@
                         color: #3877e4;
                       "
                     >
-                      Balance
+                      Expenses
                     </span>
                   </div>
                 </div>
@@ -233,7 +244,7 @@
                 >
                   <div class="d-flex align-items-center">
                     <i class="fas fa-dollar-sign fa-xs mr-1"></i>
-                    <span style="font-weight: 500">{{ totalRevenue }}</span>
+                    <span style="font-weight: 500">{{ budget }}</span>
                   </div>
                   <div>
                     <span
