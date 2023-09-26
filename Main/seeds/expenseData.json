@@ -1,0 +1,30 @@
+[
+  {
+    
+    "expense_name": "September Rent",
+    "category_name": "Rent",
+    "expense_amount": 579.21,
+    "budget_id": 1
+
+  },
+  {
+    "expense_name": "November Rent",
+    "category_name": "Rent",
+    "expense_amount": 987.21,
+    "budget_id": 2
+  },
+  {
+
+    "expense_name": "October Rent",
+    "category_name": "Rent",
+    "expense_amount": 519.21,
+    "budget_id": 3
+  },
+  {
+
+    "expense_name": "December Rent",
+    "category_name": "Rent",
+    "expense_amount": 234234.21,
+    "budget_id": 4
+  }
+]

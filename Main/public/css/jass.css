@@ -163,6 +163,10 @@ textarea {
   /* 2 */
 }
 
+button {
+  color: var(--section-inner);
+  border-radius: 3px;
+}
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -373,6 +377,7 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  color: var(--section-inner)
 }
 
 h2 {
@@ -420,7 +425,6 @@ button {
 }
 
 a {
-  color: #1b89bc;
   text-decoration: none;
 }
 
