@@ -67,6 +67,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
+      data: JSON.stringify(user.Budgets),
       logged_in: true
     });
     console.log(user);

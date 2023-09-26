@@ -38,10 +38,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-expenseForm')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .querySelector('.new-expenseForm')
+//   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.expenseList')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.expenseList')
+//   .addEventListener('click', delButtonHandler);
