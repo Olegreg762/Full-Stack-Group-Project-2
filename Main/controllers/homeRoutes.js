@@ -64,7 +64,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user)
     res.render('profile', {
       ...user,
       data: JSON.stringify(user.Budgets),

@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
   const name = document.querySelector('#expenseName').value.trim();
   const category = document.querySelector('#expenseDesc').value.trim();
   const amount = document.querySelector('#expenseFunding').value.trim();
-  console.log(name,category,amount);
+  
   if (name && amount && category) {
     const response = await fetch(`/api/expense`, {
       method: 'POST',
