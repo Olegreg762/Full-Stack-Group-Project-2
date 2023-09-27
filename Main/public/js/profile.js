@@ -2,13 +2,13 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#expenseName').value.trim();
-  const needed_funding = document.querySelector('#expenseFunding').value.trim();
-  const description = document.querySelector('#expenseDesc').value.trim();
-
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/expenses`, {
+  const category = document.querySelector('#expenseDesc').value.trim();
+  const amount = document.querySelector('#expenseFunding').value.trim();
+  console.log(name,category,amount);
+  if (name && amount && category) {
+    const response = await fetch(`/api/expense`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name: name, amount: amount, category: category }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -26,7 +26,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/expenses/${id}`, {
+    const response = await fetch(`/api/expense/${id}`, {
       method: 'DELETE',
     });
 
@@ -38,10 +38,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// document
-//   .querySelector('.new-expenseForm')
-//   .addEventListener('submit', newFormHandler);
+document
+  .querySelector('#new-expense')
+  .addEventListener('click', newFormHandler);
 
-// document
-//   .querySelector('.expenseList')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('#delete-expense')
+  .addEventListener('click', delButtonHandler);
