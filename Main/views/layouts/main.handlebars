@@ -16,15 +16,15 @@
         <span role="img" aria-label="money">💸</span>
         <a href="/">Expense Tracker</a>
       </h1>
-      <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <button onclick="location.href='/login';">login</button>
+        <button onclick="location.href='/login';">
+        <h4>Login</h4>
+        </button>
         {{/if}}
-      </nav>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->

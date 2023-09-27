@@ -162,11 +162,6 @@ textarea {
   margin: 0;
   /* 2 */
 }
-
-button {
-  color: var(--section-inner);
-  border-radius: 3px;
-}
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.

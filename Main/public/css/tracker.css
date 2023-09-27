@@ -112,9 +112,6 @@ input[type="number"] {
 }
 
 .list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -134,7 +131,6 @@ input[type="number"] {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
-  color: #fff;
   font-size: 20px;
   line-height: 20px;
   padding: 2px 5px;
