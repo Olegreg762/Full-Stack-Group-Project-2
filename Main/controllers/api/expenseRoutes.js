@@ -10,7 +10,7 @@ router.post('/', withAuth, async (req, res) => {
         category_name: req.body.category,
         expense_amount: req.body.amount,
         budget_id: req.session.user_id
-      });
+      });;
     res.status(200).json(expense);
   } catch (err) {
     res.status(400).json(err);
