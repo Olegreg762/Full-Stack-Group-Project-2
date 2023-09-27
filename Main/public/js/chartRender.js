@@ -1,7 +1,7 @@
 const plot_data = document.querySelector("#expense-chart").getAttribute("data-budget");
-// console.log("plot",plot_data);
+
 const plot_json = JSON.parse(plot_data);
-console.log(plot_json);
+
 
 // Creates the pie chart
 const ctx = document.getElementById('expense-chart').getContext('2d');

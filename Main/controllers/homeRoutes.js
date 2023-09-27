@@ -70,7 +70,6 @@ router.get('/profile', withAuth, async (req, res) => {
       data: JSON.stringify(user.Budgets),
       logged_in: true
     });
-    console.log(user);
   } catch (err) {
     res.status(500).json(err);
   }

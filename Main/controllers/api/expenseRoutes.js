@@ -2,11 +2,14 @@ const router = require('express').Router();
 const { Expense } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
   try {
-      const user = req.session.user_id;
-      const expense = await Expense.findAll({
-        where: {budget_id: user},
+      const expense = await Expense.create({
+        expense_name: req.body.name,
+        category_name: req.body.category,
+        expense_amount: req.body.amount,
+        budget_id: req.session.user_id
       });
     res.status(200).json(expense);
   } catch (err) {
@@ -19,7 +22,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const expenseData = await Expense.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        budget_id: req.session.user_id,
       },
     });
 
