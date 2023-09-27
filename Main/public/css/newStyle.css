@@ -125,7 +125,7 @@ a {
 
 .layout {
   display: flex;
-  column-gap: 20px;
+  column-gap: 0px;
 }
 
 .welcome {
@@ -246,16 +246,26 @@ a {
 
 @media (max-width: 514px) {
   header {
-    height: 80px;
+    height: 100px;
     width: 300px
   }
 
-  h4 {
-    height: min-content;
-    width: min-content;
+  h1 {
+  font-size: large;
+  }
+
+  h2 {
+  font-size: x-large;
+  }
+
+  button {
+
   }
 
   .layout {
     flex-direction: column;
+    flex-wrap: wrap;
   }
+
+
 }
