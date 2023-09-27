@@ -32,10 +32,7 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+
 
 /* Grouping content
    ========================================================================== */
@@ -371,7 +368,6 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
   color: var(--section-inner)
 }
 
@@ -1008,12 +1004,12 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: var(--accent);
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: var(--background);
 }
 
 .btn.btn-danger {

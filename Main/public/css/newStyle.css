@@ -83,6 +83,12 @@ button {
   background-color: var(--accent);
   border-radius: 10px;
   border: none;
+  margin: 3px;
+}
+
+button:hover {
+  background-color: var(--background);
+  transition: 0.3s;
 }
 
 a {
@@ -102,6 +108,30 @@ a {
   color: var(--accent);
   background-color: var(--accent);
   text-decoration: underline;
+}
+
+.left {
+  display: flex-column;
+  justify-content: start;
+}
+
+.second-column {
+  position: relative;
+  display: flex-column;
+  height: 1000px;
+  width: 500px;
+  background-color: var(--accent);
+}
+
+.layout {
+  display: flex;
+  column-gap: 20px;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .dollar-amount {
@@ -133,13 +163,13 @@ a {
 }
 
 .money {
-  font-size: 20px;
+  font-size: 26px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
 
 .money.plus {
-  color: #2ecc71;
+  color: #4dc47e;
 }
 
 .money.minus {
@@ -150,7 +180,7 @@ a {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: var(--accent);
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -195,6 +225,7 @@ a {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
+  border-radius: 1px;
   color: #fff;
   font-size: 20px;
   line-height: 20px;
@@ -205,6 +236,8 @@ a {
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  height: max-content;
+  width: max-content;
 }
 
 .list li:hover .delete-btn {
@@ -220,5 +253,9 @@ a {
   h4 {
     height: min-content;
     width: min-content;
+  }
+
+  .layout {
+    flex-direction: column;
   }
 }
