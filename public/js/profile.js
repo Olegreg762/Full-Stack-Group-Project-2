@@ -23,6 +23,7 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+  console.log(event.target, "anything")
   if (event.target.hasAttribute('data-id-expense')) {
     const id = event.target.getAttribute('data-id-expense');
 
@@ -43,5 +44,6 @@ document
   .addEventListener('click', newFormHandler);
 
 document
-  .querySelector('#delete-expense')
-  .addEventListener('click', delButtonHandler);
+  .querySelectorAll('.delete-expense')
+  .forEach((button)=> button.addEventListener('click', delButtonHandler));
+  console.log(delButtonHandler)
