@@ -151,6 +151,9 @@ a {
 .container {
   margin: 30px;
   width: 350px;
+  padding: 20px;
+  background-color: #b9d6d2;
+  border-radius: 7px;
 }
 
 .inc-exp-container {
