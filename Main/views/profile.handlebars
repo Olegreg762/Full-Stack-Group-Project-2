@@ -52,8 +52,9 @@
                 <input type="number" step="0.01" id="budgetFunding"placeholder="Enter amount..." />
             </div>
             <button class="btn" id="new-budget">Add Budget</button>
-    
-            <button class="btn" id="delete-budget">Delete Budget</button>
+            {{#each Budgets}}
+            <button class="btn" id="delete-budget" data-id="{{id}}">Delete {{name}} Budget</button>
+            {{/each}}
         </form>
 
         <h3>Add New Expense</h3>
@@ -71,8 +72,13 @@
                 <input type="number" step="0.01" id="expenseFunding"placeholder="Enter amount..." />
             </div>
             <button class="btn" id="new-expense">Add Expense</button>
-    
-            <button class="btn" id="delete-expense">Delete Expense</button>
+            {{#each Budgets}}
+            {{#if Expenses.length}}
+            {{#each Expenses}}
+            <button class="btn" id="delete-expense" data-id-expense="{{id}}">Delete {{expense_name}} Expense</button>
+            {{/each}}
+            {{/if}}
+            {{/each}}
         </form>
     </div>
 
