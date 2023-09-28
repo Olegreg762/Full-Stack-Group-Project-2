@@ -20,14 +20,14 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
+  const userBudget = await Budget.findOne({ where: { user_id: req.session.user_id } });
   try {
     const expenseData = await Expense.destroy({
       where: {
         id: req.params.id,
-        budget_id: req.session.user_id,
+        budget_id: userBudget.id,
       },
     });
-
     if (!expenseData) {
       res.status(404).json({ message: 'No expense found with this id!' });
       return;
